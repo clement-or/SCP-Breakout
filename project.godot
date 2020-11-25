@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "RigidBody",
+"class": "Player",
+"language": "GDScript",
+"path": "res://src/player/PlayerController.gd"
+}, {
 "base": "Node",
 "class": "State",
 "language": "GDScript",
@@ -20,6 +25,7 @@ _global_script_classes=[ {
 "path": "res://src/utils/StateMachine.gd"
 } ]
 _global_script_class_icons={
+"Player": "",
 "State": "",
 "StateMachine": ""
 }
@@ -30,6 +36,11 @@ config/name="SCP Breakout"
 config/description="The SCP Mobile game no one has been waiting for"
 run/main_scene="res://src/main/Game.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+SwipeInput="*res://src/autoloads/SwipeInput.gd"
+FileManager="*res://src/autoloads/FileManager.gd"
 
 [debug]
 
@@ -47,6 +58,14 @@ window/size/height=640
 window/handheld/orientation="portrait"
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
+
+[input]
+
+click={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
 
 [rendering]
 

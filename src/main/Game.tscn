@@ -1,17 +1,20 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://src/level/BaseSegment.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/main/SegmentManager.gd" type="Script" id=3]
+[ext_resource path="res://src/main/Game.gd" type="Script" id=4]
 
 [node name="Game" type="Spatial"]
+script = ExtResource( 4 )
 
 [node name="MainCamera" type="Camera" parent="."]
-transform = Transform( -0.707107, -0.5, 0.5, 0, 0.707107, 0.707107, -0.707107, 0.5, -0.5, 6, 10, -4 )
+transform = Transform( -0.707107, 0.5, -0.5, 0, 0.707107, 0.707107, 0.707107, 0.5, -0.5, -6, 10, -5 )
 projection = 1
 current = true
-size = 10.0
-
-[node name="BaseSegment" parent="." instance=ExtResource( 1 )]
+size = 15.0
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.05127, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.03933, 0 )
+
+[node name="SegmentManager" type="Node" parent="."]
+script = ExtResource( 3 )
